@@ -1,26 +1,29 @@
-import React from 'react'
+import Card from "../components/Card"
+
+const sections = [{
+    to: "Series",
+    image: "/images/placeholder.png",
+    title: "SERIES"
+},
+{
+    to: "Movies",
+    image: "/images/placeholder.png",
+    title: "MOVIES"
+}
+]
 
 export default function Home() {
     return (
-        <div className='flex flex-col sm:flex-row m-auto w-51 gap-4 max-w-105 sm:ml-20 md:ml-30 pt-10 pb-10 sm:pb-20 md:pb-30'> 
-        <div className='flex flex-col m-auto w-50'>
-            <div className='flex flex-col items-center'>
-                <div className='relative bg-gray-900 justify-center items-center flex w-50 h-70 overflow-hidden'>
-                    <img className='w-50 h-30 scale-200' src="/images/placeholder.png" alt="placeholder" />
-                    <h3 className='absolute text-white text-5xl font-medium'>SERIES</h3>
-                </div>
+        <>
+            <p className='bg-[#414141] text-sm text-white py-2 sm:pl-10 pl-2 md:pl-20 sm:text-lg font-medium '>
+                Popular Titles
+            </p>
+            <div className='flex flex-col sm:flex-row m-auto w-51 gap-4 max-w-105  sm:ml-10 md:ml-20 pt-10 pb-10 sm:pb-20 md:pb-30'>
+                {sections.map((e) => (
+                    <Card key={e.title} {...e} />
+                ))}
             </div>
-            <p className='pt-1'>Popular Series</p>
-        </div>
-        <div className='flex flex-col m-auto w-50'>
-            <div className='flex flex-col items-center'>
-                <div className='relative bg-gray-900 justify-center items-center flex w-50 h-70 overflow-hidden'>
-                    <img className='w-50 h-30 scale-200' src="/images/placeholder.png" alt="placeholder" />
-                    <h3 className='absolute text-white text-5xl font-medium'>MOVIES</h3>
-                </div>
-            </div>
-            <p className='pt-1'>Popular Movies</p>
-        </div>
-        </div>
+        </>
+
     )
 }
