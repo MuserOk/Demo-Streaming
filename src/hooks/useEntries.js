@@ -14,7 +14,7 @@ export default function useEntries(type) {
                 setLoading(true);
                 setError(null);
 
-                const response = await axios.get("/src/data/sample.json");
+                const response = await axios.get("/data/sample.json");
 
 
                 const allEntries = response.data.entries;
