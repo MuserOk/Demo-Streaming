@@ -1,9 +1,10 @@
 import React from 'react'
 import useEntries from "../hooks/useEntries"
 import MoreInfoCard from '../components/MoreInfoCard'
+import { useState } from 'react'
 
 export default function Movies() {
-  const { data, loading, error } = useEntries("series")
+  const { data, loading, error } = useEntries("movie")
   const [selectedItem, setSelectedItem] = useState(null)
 
   const handleOpenPopup = (item) => {
